@@ -4,9 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/index.js" type="module"></script>
   <title>if文を使った課題</title>
 </head>
 <body>
-  Hello World!!
+  <ul class="tab-list">
+    <li class="tab-item crnt">じゃんけん課題</li>
+    <li class="tab-item">サンプル2</li>
+    <li class="tab-item">サンプル3</li>
+  </ul>
+  <div class="janken-container">
+    <div id="rejan1">
+      <span class="js-player-janken"></span>を選択しました。じゃんけんの結果は・・・？
+    </div>
+    <div class="btn" id="rClick">じゃんけんする</div>
+    <div id="rejan2">
+      相手は<span class="js-janken"></span>で<span class="js-result"></span>
+    </div>
+  </div>
 </body>
 </html>
