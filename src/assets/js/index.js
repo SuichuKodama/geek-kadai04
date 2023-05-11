@@ -1,20 +1,53 @@
-const $rClick = document.getElementById('rClick');
+const $rock = document.getElementById('rock');
+const $scissors = document.getElementById('scissors');
+const $paper = document.getElementById('paper');
+const $jankenList = document.querySelector('.janken-btn-list')
 
-$rClick.addEventListener('click', clickEvent);
+$rock.addEventListener('click', function() {
+    clickEvent(0);
+    $jankenList.classList.add('rock')
+    $jankenList.classList.remove('scissors')
+    $jankenList.classList.remove('paper')
+});
 
-function clickEvent() {
-  let $janken = ['ぐー', 'ちょき', 'ぱー'];
-  let $jankenRandom = Math.floor( Math.random() * 3 );
+$scissors.addEventListener('click', function() {
+    clickEvent(1);
+    $jankenList.classList.remove('rock')
+    $jankenList.classList.add('scissors')
+    $jankenList.classList.remove('paper')
+});
 
-  let $playerJanken = ['ぐー', 'ちょき', 'ぱー'];
-  let $playerJankenRandom = Math.floor( Math.random() * 3);
+$paper.addEventListener('click', function() {
+    clickEvent(2);
+    $jankenList.classList.remove('rock')
+    $jankenList.classList.remove('scissors')
+    $jankenList.classList.add('paper')
+});
 
-  let $resultEnd = document.querySelector('.js-result')
-  let $playerSelect = document.querySelector('.js-player-janken')
-  let $comSelect = document.querySelector('.js-janken')
+// const $jankenBtn = document.querySelectorAll('.js-janken-btn');
 
-  $playerSelect.innerHTML = $playerJanken[$jankenRandom];
-  $comSelect.innerHTML = $janken[$playerJankenRandom];
+// for (let i = 0; i < $jankenBtn.length; i++) {
+//     $jankenBtn[i].addEventListener('click', clickEvent);
+// }
+
+
+function clickEvent($playerJankenRandom) {
+  const $janken = ['ぐー', 'ちょき', 'ぱー'];
+  const $jankenRandom = Math.floor( Math.random() * 3 );
+  const $playerJanken = ['ぐー', 'ちょき', 'ぱー'];
+
+  const $comImgSrc = ['rock', 'scissors', 'paper'];
+
+
+  const $resultEnd = document.querySelector('.js-result')
+//   const $comSelect = document.querySelector('.js-janken')
+//   const $playerSelect = document.querySelector('.js-player-janken')
+  const $comImg = document.querySelector('.com-img')
+
+//   $playerSelect.innerHTML = $playerJanken[$playerJankenRandom];
+//   $comSelect.innerHTML = $janken[$jankenRandom];
+
+  $comImg.src = '/assets/img/' + $comImgSrc[$jankenRandom] + '.png';
 
   if ($jankenRandom === $playerJankenRandom) {
     $resultEnd.innerHTML = 'あいこ';
@@ -29,6 +62,9 @@ function clickEvent() {
   }
 
 }
+
+
+
 
 
 
