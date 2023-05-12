@@ -1,36 +1,61 @@
 body {
-  background-color: #eee;
+  background-color: #F2E3D5;
+}
+
+.darumadrop {
+  font-family: 'Darumadrop One', cursive;
 }
 
 .tab-list {
+  font-family: var(--darumadrop);
   display: flex;
-  background-color: #eee;
+  background-color: #555555;
   font-weight: bold;
-  border-bottom: solid 2px #555;
 }
 
 .tab-list .tab-item {
+  font-size: 20px;
   width: 200px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eee;
-  color: #555555;
+  background-color: #555555;
+  color: #F2E3D5;
   transition: background-color 250ms ease,
   color 250ms ease;
   cursor: pointer;
-  border-right: solid 2px #555;
+  border-right: solid 2px #F2E3D5;
 }
 
 .tab-list .tab-item:hover {
-  background-color: #555555;
-  color: #eee;
+  background-color: #F2E3D5;
+  color: #555555;
+}
+
+.tab-list .tab-item:nth-child(2):hover {
+  background-color: #026773;
+  color: #F2E3D5;
+}
+
+.tab-list .tab-item:nth-child(3):hover {
+  background-color: #012E40;
+  color: #F2E3D5;
 }
 
 .tab-list .tab-item.crnt {
-  background-color: #555555;
-  color: #eee;
+  background-color: #F2E3D5;
+  color: #555555;
+}
+
+.tab-list .tab-item.crnt:nth-child(2) {
+  background-color: #026773;
+  color: #F2E3D5;
+}
+
+.tab-list .tab-item.crnt:nth-child(3) {
+  background-color: #012E40;
+  color: #F2E3D5;
 }
 
 .janken-container {
@@ -40,6 +65,11 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 40px 0;
+  visibility: hidden;
+}
+
+.janken-container.is-show {
+  visibility: visible;
 }
 
 .janken-container .top-container,
@@ -93,8 +123,10 @@ body {
 }
 
 .janken-container .janken-btn-list .item .btn {
+  font-size: 20px;
   width: 200px;
   height: 50px;
+  box-sizing: border-box;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -110,10 +142,88 @@ body {
 .janken-container .janken-btn-list.scissors .item:nth-child(2) .btn,
 .janken-container .janken-btn-list.paper .item:nth-child(3) .btn {
   background-color: #555;
-  color: #eee;
+  color: #F2E3D5;
 }
 
 .janken-container .janken-btn-list .item:hover .btn {
   background-color: #555;
-  color: #eee;
+  color: #F2E3D5;
 }
+
+.bottom-container .result {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+
+.container1 {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: #026773;
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  overflow: hidden;
+}
+
+.container2 {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: #012E40;
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  overflow: hidden;
+}
+
+.container1.is-show,
+.container2.is-show {
+  visibility: visible;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  overflow: hidden; /* スクロール防止のため */
+  margin: 0;
+}
+/* 親 */
+.container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  position: relative;
+  transform-origin: center left;
+  transform: scale(1.5);
+}
+
+.container:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #026773;
+}
+/* 子 */
+.box {
+  flex: 1;
+  height: 100%;
+  scale: 1 0;
+  background: #F2E3D5;
+}
+
+audio {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: calc(100% - 64px);
+}
+

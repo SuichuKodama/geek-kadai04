@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/index.js" type="module"></script>
@@ -11,36 +14,43 @@
 </head>
 <body>
   <ul class="tab-list">
-    <li class="tab-item crnt">じゃんけん課題</li>
-    <li class="tab-item">サンプル2</li>
-    <li class="tab-item">サンプル3</li>
+    <li class="tab-item darumadrop crnt">じゃんけんかだい</li>
+    <li class="tab-item darumadrop">さうんど</li>
+    <li class="tab-item darumadrop">からっぽ</li>
   </ul>
-  <div class="janken-container">
+  <div class="janken-container js-item-container is-show">
     <div class="top-container">
       <img src="/assets/img/question.png" alt="" class="com-img">
     </div>
     <div class="bottom-container">
-      <div id="rejan2">
-        <span class="js-result"></span>
+      <div class="result" id="rejan2">
+        <span class="js-result darumadrop"></span>
       </div>
       <ul class="janken-btn-list">
         <li class="item js-janken-btn" id="rock">
           <img src="/assets/img/rock.png" alt="" class="img rock-img">
-          <div class="btn">ぐー</div>
+          <div class="btn darumadrop">ぐー</div>
         </li>
         <li class="item js-janken-btn" id="scissors">
           <img src="/assets/img/scissors.png" alt="" class="img scissors-img">
-          <div class="btn">ちょき</div>
+          <div class="btn darumadrop">ちょき</div>
         </li>
         <li class="item js-janken-btn" id="paper">
           <img src="/assets/img/paper.png" alt="" class="img paper-img">
-          <div class="btn">ぱー</div>
+          <div class="btn darumadrop">ぱー</div>
         </li>
       </ul>
       <div id="rejan1">
         <!-- <span class="js-player-janken"></span> -->
       </div>
     </div>
+  </div>
+  <div class="container1 js-item-container">
+    <div class="container"></div>
+    <audio src="/assets/sound/you-and-me.mp3" id="audio" loop controls></audio>
+  </div>
+  <div class="container2 js-item-container">
+
   </div>
 </body>
 </html>
