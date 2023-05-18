@@ -170,7 +170,7 @@ body {
 .container2 {
   width: 100%;
   height: calc(100% - 50px);
-  background-color: #012E40;
+  background: url(/assets/img/space.webp) center / cover no-repeat;
   visibility: hidden;
   position: absolute;
   top: 50px;
@@ -226,4 +226,5 @@ audio {
   left: 32px;
   width: calc(100% - 64px);
 }
+
 
