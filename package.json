@@ -1,21 +1,18 @@
 {
-  "name": "geek-kadai01",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "geek-kadai03",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "browser-sync src dist -w",
-    "dist": "rsync -av --delete --exclude .DS_Store --exclude .git --exclude node_modules --exclude package.json --exclude package-lock.json --exclude .editorconfig --exclude .gitignore --exclude README.md --exclude dist ./src/ dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.27.9"
+    "dat.gui": "^0.7.9",
+    "vite": "^4.3.2"
   },
   "dependencies": {
-    "animejs": "^3.2.1",
     "three": "^0.152.2"
   }
 }

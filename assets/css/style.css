@@ -178,8 +178,19 @@ body {
   overflow: hidden;
 }
 
+.container3 {
+  width: 100%;
+  height: calc(100% - 50px);
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  overflow: hidden;
+}
+
 .container1.is-show,
-.container2.is-show {
+.container2.is-show,
+.container3.is-show {
   visibility: visible;
 }
 
@@ -190,8 +201,9 @@ body {
   overflow: hidden; /* スクロール防止のため */
   margin: 0;
 }
+
 /* 親 */
-.container {
+.container1 .container {
   display: flex;
   height: 100%;
   justify-content: center;

@@ -11,15 +11,17 @@
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/index.js" type="module"></script>
   <script src="/assets/js/main.js" type="module"></script>
+  <script src="/assets/js/particle.js" type="module"></script>
   <title>if文(条件分岐)を使った課題</title>
 </head>
 <body>
   <ul class="tab-list">
-    <li class="tab-item darumadrop crnt">じゃんけんかだい</li>
+    <li class="tab-item darumadrop">じゃんけんかだい</li>
     <li class="tab-item darumadrop">さうんど</li>
-    <li class="tab-item darumadrop">からっぽ</li>
+    <li class="tab-item darumadrop">ちきゅう</li>
+    <li class="tab-item darumadrop crnt">ぱーてぃくる</li>
   </ul>
-  <div class="janken-container js-item-container is-show">
+  <div class="janken-container js-item-container">
     <div class="top-container">
       <img src="/assets/img/question.png" alt="" class="com-img">
     </div>
@@ -48,10 +50,9 @@
   </div>
   <div class="container1 js-item-container">
     <div class="container"></div>
-    <audio src="/assets/sound/you-and-me.mp3" id="audio" loop controls></audio>
+    <audio src="./assets/sound/you-and-me.mp3" id="audio" loop controls></audio>
   </div>
-  <div class="container2 js-item-container" id="three-test">
-
-  </div>
+  <div class="container2 js-item-container" id="three-test"></div>
+  <div class="container3 js-item-container is-show" id="three-particle"></div>
 </body>
 </html>
