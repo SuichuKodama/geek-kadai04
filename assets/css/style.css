@@ -1,242 +1,113 @@
+@font-face {
+  font-family: 'OldSchoolFont';
+  src: url('/assets/font/Web437_IBM_BIOS.woff') format('woff');
+}
+
 body {
-  background-color: #F2E3D5;
-}
-
-.darumadrop {
-  font-family: 'Darumadrop One', cursive;
-}
-
-.tab-list {
-  font-family: var(--darumadrop);
-  display: flex;
-  background-color: #555555;
-  font-weight: bold;
-}
-
-.tab-list .tab-item {
-  font-size: 20px;
-  width: 200px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #555555;
-  color: #F2E3D5;
-  transition: background-color 250ms ease,
-  color 250ms ease;
-  cursor: pointer;
-  border-right: solid 2px #F2E3D5;
-}
-
-.tab-list .tab-item:hover {
-  background-color: #F2E3D5;
-  color: #555555;
-}
-
-.tab-list .tab-item:nth-child(2):hover {
-  background-color: #026773;
-  color: #F2E3D5;
-}
-
-.tab-list .tab-item:nth-child(3):hover {
-  background-color: #012E40;
-  color: #F2E3D5;
-}
-
-.tab-list .tab-item.crnt {
-  background-color: #F2E3D5;
-  color: #555555;
-}
-
-.tab-list .tab-item.crnt:nth-child(2) {
-  background-color: #026773;
-  color: #F2E3D5;
-}
-
-.tab-list .tab-item.crnt:nth-child(3) {
-  background-color: #012E40;
-  color: #F2E3D5;
-}
-
-.janken-container {
-  height: calc(100vh - 50px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 40px 0;
-  visibility: hidden;
-}
-
-.janken-container.is-show {
-  visibility: visible;
-}
-
-.janken-container .top-container,
-.janken-container .bottom-container {
-  text-align: center;
-}
-
-.janken-container .com-img {
-  height: 200px;
-}
-
-.janken-container .janken-btn-list {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 0 20px;
-}
-
-.janken-container .janken-btn-list .item {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px 0;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.janken-container .janken-btn-list .img {
-  height: 200px;
-}
-
-.janken-container .janken-btn-list.rock .item:nth-child(1) .img,
-.janken-container .janken-btn-list.scissors .item:nth-child(2) .img,
-.janken-container .janken-btn-list.paper .item:nth-child(3) .img {
-  height: 200px;
-}
-
-.janken-container .janken-btn-list.rock .item:nth-child(2) .img,
-.janken-container .janken-btn-list.rock .item:nth-child(3) .img,
-.janken-container .janken-btn-list.scissors .item:nth-child(1) .img,
-.janken-container .janken-btn-list.scissors .item:nth-child(3) .img,
-.janken-container .janken-btn-list.paper .item:nth-child(1) .img,
-.janken-container .janken-btn-list.paper .item:nth-child(2) .img {
-  height: 120px;
-}
-
-.janken-container .janken-btn-list .img {
-  height: 200px;
-}
-
-.janken-container .janken-btn-list .item .btn {
-  font-size: 20px;
-  width: 200px;
-  height: 50px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 2px #555;
-  cursor: pointer;
-  color: #333;
-  transition: background-color 250ms ease,
-  color 250ms ease;
-}
-
-.janken-container .janken-btn-list.rock .item:nth-child(1) .btn,
-.janken-container .janken-btn-list.scissors .item:nth-child(2) .btn,
-.janken-container .janken-btn-list.paper .item:nth-child(3) .btn {
-  background-color: #555;
-  color: #F2E3D5;
-}
-
-.janken-container .janken-btn-list .item:hover .btn {
-  background-color: #555;
-  color: #F2E3D5;
-}
-
-.bottom-container .result {
-  font-size: 60px;
-  margin-bottom: 30px;
-}
-
-
-.container1 {
+  font-family: 'OldSchoolFont';
   width: 100%;
-  height: calc(100% - 50px);
-  background-color: #026773;
-  visibility: hidden;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  overflow: hidden;
+  height: 100vh;
+  background: #f9efe4;
 }
 
-.container2 {
+.header {
   width: 100%;
-  height: calc(100% - 50px);
-  background: url(/assets/img/space.webp) center / cover no-repeat;
-  visibility: hidden;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  overflow: hidden;
+  height: 20px;
+  position: fixed;
+  top: 0;
+  border: solid 1px #000;
 }
 
-.container3 {
-  width: 100%;
-  height: calc(100% - 50px);
-  visibility: hidden;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  overflow: hidden;
-}
-
-.container1.is-show,
-.container2.is-show,
-.container3.is-show {
-  visibility: visible;
-}
-
-html, body {
-  height: 100%;
-}
-body {
-  overflow: hidden; /* スクロール防止のため */
-  margin: 0;
-}
-
-/* 親 */
-.container1 .container {
+.header .container {
   display: flex;
-  height: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1px;
+}
+
+.header .left {
   position: relative;
-  transform-origin: center left;
-  transform: scale(1.5);
 }
 
-.container:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
+.header .left::before {
+  content: '';
+  width: 1px;
+  height: 20px;
+  background-color: #000;
+  top: -1px;
+  right: 0;
   position: absolute;
-  top: 50%;
+}
+
+.header .logo {
+  font-size: 10px;
+  padding: 2px 8px 0;
+}
+
+.header .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header .time {
+  font-size: 10px;
+  padding: 2px 8px 0 12px;
+  position: relative;
+}
+
+.header .time::after {
+  content: '';
+  width: 1px;
+  height: 20px;
+  background-color: #000;
+  top: -1px;
   left: 0;
-  background: #026773;
-}
-/* 子 */
-.box {
-  flex: 1;
-  height: 100%;
-  scale: 1 0;
-  background: #F2E3D5;
+  position: absolute;
 }
 
-audio {
+.header .date {
+  font-size: 10px;
+  text-align: center;
+  padding: 2px 8px 0 12px;
+  position: relative;
+}
+
+.header .date::after {
+  content: '';
+  width: 1px;
+  height: 20px;
+  background-color: #000;
+  top: -1px;
+  left: 0;
   position: absolute;
-  top: 32px;
-  left: 32px;
-  width: calc(100% - 64px);
+}
+
+.main-window {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-window .terminal-window {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  aspect-ratio: 1/1;
+  margin: auto;
+  padding: 1%;
+  font-size: 10px;
+  background-color: #000;
+  color: #00FF00;
+}
+
+@media screen and (max-width: 640px) {
+  .main-window .terminal-window {
+    height: 100%;
+    aspect-ratio: none;
+  }
 }
 
 

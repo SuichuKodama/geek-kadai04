@@ -1,8 +1,6 @@
 # geek-kadai04
 npm i
 
-npm run dist
-
 npm run dev
 
 ## ①課題内容（どんな作品か）
