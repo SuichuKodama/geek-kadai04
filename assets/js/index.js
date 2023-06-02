@@ -68,39 +68,103 @@ window.addEventListener('load', function() {
 document.getElementById('command').focus();
 
 
+
 //input、outputの取得
 const input = document.getElementById('command');
 const output = document.getElementById('output');
+
+
+//getItem
+let history = load();
+
+console.log(history)
+
+function load() {
+  const it = localStorage.getItem('history');
+  if (it) {
+    return it.split('\n');
+  }
+  return [];
+}
+
+//setItem
+function save(history) {
+  localStorage.setItem('history', history.join('\n'));
+}
+
 
 //Enterキーでイベント発火！
 input.addEventListener('keypress', enterEvent);
 
 function enterEvent(e) {
-
   if (e.keyCode === 13) {
-    output.innerHTML += `
-    <p>geek-academy@Free PC ~ %  ${input.value}</p>
-    <p>${input.value}</p>
-    `;
 
-    localStorage.setItem(localStorage.length.toString(), input.value);
+    if (input.value === 'history') {
+      output.innerHTML += `
+      <p>geek-academy@Free PC ~ %  ${input.value}</p>
+      `;
+      renderHistory();
+    } else if (input.value === 'open') {
+      output.innerHTML += `
+      <p>geek-academy@Free PC ~ %  ${input.value}</p>
+      <p>${input.value}</p>
+      `;
+      window.open('https://poolsuite.net/');
+    } else if (input.value === 'cat') {
+      output.innerHTML += `
+      <p>geek-academy@Free PC ~ %  ${input.value}</p>
+      <p>
+      　　 　　　/ﾞﾐヽ､,,___,,／ﾞヽ<br>
+      　　 　　　i ノ　　 川　｀ヽ'<br>
+      　　 　　　/　｀　・　 ． ・　i､<br>
+      　　 　　彡,　　 ミ(_,人_)彡ミ<br>
+      　∩, 　/　ヽ､,　　 　　　ノ<br>
+      　丶ニ|　　　 '"''''''''"´　ﾉ<br>
+      　　　　∪⌒∪"￣￣∪<br>
+      </p>
+      `;
+    } else if (input.value === 'cow') {
+      output.innerHTML += `
+      <p>geek-academy@Free PC ~ %  ${input.value}</p>
+      <p>
+      　　　　　　　　Ａ_Ａ　　　　 Ａ_Ａ　__<br>
+      　　　./⌒▼⊂　・ ・つ　⊂・ ・　⊃▼⌒丶　<br>
+      　*～|●　 （ （＿_ω）　（ω＿_） ）　　●|～*<br>
+      　　　.∪∪～U U　　　　　　 U U. ～- 'U<br>
+      </p>
+      `;
+    } else {
+      output.innerHTML += `
+      <p>geek-academy@Free PC ~ %  ${input.value}</p>
+      <p>${input.value}</p>
+      `;
+    }
+
+
+    addHistory(input.value);
     input.value = '';   
-    return false;  
+    return false;
 	} 
 }
 
-//コマンドラインの中身
-let cli = [
-  {
-    "command": "最新の報告書から、小規模事業者や起業家がApp Storeで世界的な成功を収めていることが浮き彫りに",
-    "output": "https://www.apple.com/jp/newsroom/2022/05/new-report-highlights-global-success-of-small-businesses-on-the-app-store/"
-  },
-  {
-    "command": "Appleの世界開発者会議、6月6日（日本時間6月7日）に基調講演で開幕",
-    "output": "https://www.apple.com/jp/newsroom/2022/05/apples-worldwide-developers-conference-kicks-off-june-6-with-keynote-address/"
-  },
-  {
-    "command": "Apple、新しいApple Watchプライドエディションのバンドを発表",
-    "output": "https://www.apple.com/jp/newsroom/2022/05/apple-unveils-new-apple-watch-pride-edition-bands/"
-  }
-];
+//コマンド入力
+function addHistory(cmd) {
+  history = history.concat(cmd);
+  save(history);
+  // renderHistory();
+}
+
+//historyレンダリング
+function renderHistory() {
+  const historyCli = document.getElementById('history');
+  historyCli.innerHTML = '';
+  
+  for (const item of history) {
+    const li = document.createElement('li');
+    li.textContent = item;
+    historyCli.appendChild(li);
+  } 
+}
+
+// renderHistory();
+
