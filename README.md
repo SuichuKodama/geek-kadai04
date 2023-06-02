@@ -9,7 +9,7 @@ npm run dev
 
 ## ②工夫した点・こだわった点
 
-  - 過去IBM PC システム BIOSで使用されてたフォントを適用
+  - 過去IBM PC システム BIOSで使用されてたフォントを適用(https://int10h.org/oldschool-pc-fonts/fontlist/)
   - ユーザーのブラウザ情報を取得して毎回表示させる
   - historyで過去入力したコマンド100件（上限）が表示されるようにした
 
