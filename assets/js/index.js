@@ -133,6 +133,13 @@ function enterEvent(e) {
       　　　.∪∪～U U　　　　　　 U U. ～- 'U<br>
       </p>
       `;
+    } else if (input.value === 'echo') {
+      output.innerHTML += `
+      <p>geek-academy@Free PC ~ %  ${input.value}</p>
+      <p>
+      ...............e....e.....echo???
+      </p>
+      `;
     } else {
       output.innerHTML += `
       <p>geek-academy@Free PC ~ %  ${input.value}</p>
@@ -168,3 +175,8 @@ function renderHistory() {
 
 // renderHistory();
 
+const resetBtn = document.querySelector('.js-reset')
+
+resetBtn.addEventListener('click', function(){
+  localStorage.clear();
+})
