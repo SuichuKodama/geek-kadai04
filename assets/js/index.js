@@ -140,6 +140,13 @@ function enterEvent(e) {
       ...............e....e.....echo???
       </p>
       `;
+    } else if (input.value === 'ls') {
+      output.innerHTML += `
+      <p>geek-academy@Free PC ~ %  ${input.value}</p>
+      <p>
+      no!!!!!!!
+      </p>
+      `;
     } else {
       output.innerHTML += `
       <p>geek-academy@Free PC ~ %  ${input.value}</p>
@@ -164,7 +171,7 @@ function addHistory(cmd) {
 //historyレンダリング
 function renderHistory() {
   const historyCli = document.getElementById('history');
-  historyCli.innerHTML = '';
+  historyCli.innerHTML += '';
   
   for (const item of history) {
     const li = document.createElement('li');
@@ -179,4 +186,5 @@ const resetBtn = document.querySelector('.js-reset')
 
 resetBtn.addEventListener('click', function(){
   localStorage.clear();
+  location.reload();
 })
